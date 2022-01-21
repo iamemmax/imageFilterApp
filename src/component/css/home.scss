@@ -20,12 +20,10 @@
     .form{
         z-index: 6;
         // border: 2px solid red;
-        width: 60%;
         max-width: 100%;
         padding: 10px;
         position: absolute;
         left: 50%;
-        top: 30%;
         transform: translate(-50%, -50%);
         text-align: center;
 
@@ -54,6 +52,33 @@
             background-color: transparent;
             color: $secondary;
 
+        }
+        @include breakpoints(mobile){
+        //    border: 2px solid red;
+        width: 100%;
+        top: 25%;
+           
+           input{
+               width: 95%;
+           }
+    
+            
+        }
+        @include breakpoints(tablet){
+           width: 80%;
+           top: 20%;
+
+           
+    
+            
+        }
+        @include breakpoints(laptop){
+           width: 60%;
+           top: 30%;
+
+           
+    
+            
         }
     }
 
@@ -189,9 +214,19 @@
     box-shadow: 0px 1px 1px 2px (#eee);
     margin-bottom: 1rem;
     z-index: 5;
+    // flex-wrap: nowrap !important;
+
+    // border: 2px solid red;
+
+    @include breakpoints(laptop){
+        margin: 5px 10px;
+        font-size: 16px !important;
+        padding: 10px;
+    }
     
     button, select{
-        margin: 10px 15px;
+        padding: 10px;
+        padding-bottom: 0;
         outline: none;
         border: none;
         background-color: transparent;
@@ -200,7 +235,19 @@
         cursor: pointer;
         font-weight: 500;
         font-family: 'Poppins', sans-serif;
+    // border: 2px solid red;
         
+        @include breakpoints(mobile){
+            font-size: 12px !important;
+        }
+        @include breakpoints(tablet){
+            // margin: 5px 10px;
+            font-size: 14px !important;
+        }
+        @include breakpoints(laptop){
+            margin: 5px 10px;
+            font-size: 16px !important;
+        }
     }
     
     option{
@@ -209,18 +256,16 @@
     }
     .active{
         background-color: $secondary;
-        padding: 10px;
+        padding: 8px;
         border-radius: 5px;
         color: #fff;
+
+        @include breakpoints(tablet){
+           padding: 10px;
+        }
     }
 
-    @media screen and (max-width:1000px) {
-        @include flex;
-        overflow-x: auto;
-       button, select{
-        font-size: 14px;
-       }
-    }
+    
 }
 
 
@@ -233,13 +278,36 @@
     
     input{
         padding: 10px;
-
+        
+        
     }
     button{
         font-size: 25px;
     }
     h2{
         display: none;
+    }
+    @include breakpoints(mobile){
+        width: 60%;
+        left: 70%;
+
+        button{
+            right: .5rem;
+        }
+    }
+    @include breakpoints(tablet){
+        left: 65%;
+
+        button{
+            right: 2rem;
+        }
+    }
+    @include breakpoints(laptop){
+        margin-right: 2rem !important;
+        width: 60%;
+        left: 60%;
+
+        
     }
     
     
@@ -248,7 +316,7 @@
   .fixedFilter{
     position: fixed !important;
     left: 0;
-    top: 3.7rem;
+    top: 3.5rem;
     width: 100%;
     z-index: 9999 !important;
     background-color: #fff;

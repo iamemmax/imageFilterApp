@@ -18,7 +18,7 @@
   // background-image: url("https://source.unsplash.com/random/800x600");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   background-blend-mode: color;
   object-fit: cover;
   max-width: 100%;
@@ -33,6 +33,7 @@
     background-color: #000;
     opacity: .7;
 }
+
 
 }
 .header{
@@ -92,6 +93,25 @@
   top: 0;
   width: 100%;
   background-color: $primary !important;
-  z-index: 9999 !important;
+  z-index: 999 !important;
   // margin-bottom: 2rem;
+
+  
+  @include breakpoints(mobile){
+    .logo{
+      // border: 2px solid red;
+      margin-top: -.5rem;
+
+     a{
+      font-size: 20px !important;
+   
+    }
+  }
+  }
+  @include breakpoints(tablet){
+    .logo a{
+      font-size: 25px !important;
+    }
+  }
+ 
 }
