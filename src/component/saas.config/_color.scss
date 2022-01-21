@@ -1,0 +1,26 @@
+@use  "sass:math";
+
+$primary:#131921 !default;
+$primary_light : #286076 !default;
+$secondary : #e28904 !default;
+$accent : #232f3e !default;
+$logo_color: #cd0491 !default;
+$light :#fff;
+
+
+$colors:(
+    dark :$primary,
+    primary_light : $primary_light,
+    secondary : $secondary,
+    accent : $accent,
+    secondary-deep : #f68b1e,
+    light :#fff,
+    logo :$logo_color,
+    danger:rgb(155, 8, 8)
+
+
+);
+
+@function colors($background){
+    @return map-get($colors, $background )
+}
