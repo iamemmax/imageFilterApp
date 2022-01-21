@@ -214,8 +214,12 @@
         color: #fff;
     }
 
-    @include breakpoints(mobile){
-
+    @media screen and (max-width:1000px) {
+        @include flex;
+        overflow-x: auto;
+       button, select{
+        font-size: 14px;
+       }
     }
 }
 
@@ -238,6 +242,7 @@
         display: none;
     }
     
+    
   }
   
   .fixedFilter{
@@ -251,5 +256,12 @@
     button, select{
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+    @media screen and (max-width:1000px) {
+        @include flex;
+        overflow-x: auto;
+       button, select{
+        font-size: 14px;
+       }
     }
   }
