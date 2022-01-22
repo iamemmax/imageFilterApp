@@ -29,7 +29,7 @@ let data
     }
 }
 
-export const LoadMoreImage = (page, orient, sort,  query) => async (dispatch) =>{
+export const LoadMoreImage = (query, orient, sort, page) => async (dispatch) =>{
     dispatch({type:LOADMORE_IMG_RESPONSE})
     
     
@@ -38,7 +38,7 @@ export const LoadMoreImage = (page, orient, sort,  query) => async (dispatch) =>
    let url
 let mainUrl = `https://api.unsplash.com/photos/?client_id=${accessKey}&per_page=30&page=${page}&order_by=${sort}`
 
- let SearchUrl = `https://api.unsplash.com/search/photos?client_id=${accessKey}&page=${page}&per_page=30&orientation=${orient}&order_by=${sort}&query=${query}&orientation=${orient}`
+ let SearchUrl = `https://api.unsplash.com/search/photos?client_id=${accessKey}&query=${query}&per_page=30&orientation=${orient}&order_by=${sort}&page=${page}`
 
  query ? url = `${SearchUrl}` : url = `${mainUrl}`
 

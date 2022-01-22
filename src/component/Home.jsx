@@ -67,7 +67,7 @@ const handleOrientation = (e) =>{
     }, [dispatch, query, orient, sort]);
 
 const fetchMore =() =>{
-    dispatch(LoadMoreImage(page, orient, sort, query))
+    dispatch(LoadMoreImage(query, orient, sort, page))
     setPage(page+1)
 }
 
