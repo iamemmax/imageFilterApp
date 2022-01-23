@@ -28,14 +28,15 @@ function Tags({match}) {
       dispatch(loadMoreTags(tag, page))
     }
   return <div>
-    {loading ?  <Loading /> :
+    {loading &&  <Loading /> }
     <>
     <InfiniteScroll
                 dataLength={imgTags.length}
                 next={fetchMore}
                 hasMore={true}
                 // scrollThreshold={0.5}
-                loader={loading && <Loading />}>
+                // loader={loading && <Loading />}
+                >
     
           <div className="tag__container">
             <div className="arrange__tag">
@@ -46,7 +47,7 @@ function Tags({match}) {
     </div>
     </InfiniteScroll>
                 </>
-}
+{/* } */}
   </div>;
 }
 
