@@ -1,8 +1,10 @@
 import {combineReducers} from "redux"
-import { getImages } from "./Reducer/getImage"
+import { getImages, getImagesById, getImagesByTag } from "./Reducer/getImage"
 
 const rootReducer = combineReducers ({
     photos:getImages,
+    single:getImagesById,
+    tags:getImagesByTag
    
 })
 

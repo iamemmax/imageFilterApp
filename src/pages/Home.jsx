@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import {getImages, LoadMoreImage} from "../redux/Action/product/fetch"
 import {useDispatch, useSelector} from "react-redux"
-import DisplayImage from './DisplayImage';
-import "./css/home.scss"
-// import Search from './Search';
+import DisplayImage from '../component/DisplayImage';
+import "../pages/scss/home.scss"
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Search from './Search';
+import Search from '../component/Search';
 import Loading from '../component/Loading';
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css"; 
@@ -162,7 +161,7 @@ const [fixedFilter, setfixedFilter] = useState(false);
         {/* </Slider> */}
 
             <div className="display">
-                {images?.map((data, index) => <DisplayImage img={data.urls.regular} alt={data.alt_description} title={data.user.username} userImg={data.user.profile_image.small} download={data.links.download} key={index}/>)}
+                {images?.map((data, index) => <DisplayImage data={data} index={index}/>)}
             </div>
             </InfiniteScroll>
 

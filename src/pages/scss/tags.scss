@@ -1,0 +1,107 @@
+@import "../../component/saas.config/color.scss";
+@import "../../component/saas.config/mixing.scss";
+@import "../../component/saas.config/font.scss";
+
+
+
+body{
+    background-color: #eee;
+}
+.tag__container{
+    width: 90%;
+    max-width: 100%;
+    margin: 0px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 0px 1px #eee;
+    position: relative;
+    
+    .arrange__tag{
+        display:  grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap:20px;
+         margin: 10px;
+         
+       div div{
+             position: relative;  
+             height: 300px;
+             overflow: hidden;
+
+             &:hover .more__info{
+                 display: flex;
+             }
+         }
+        
+    }
+   
+    
+    .tag__box{
+        
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+   
+    }
+}
+
+
+
+
+}
+.more__info{
+    position: absolute;
+    left: 0;
+    height: 50px !important;
+    // top: 1rem;
+    @include flex(space-between);
+    bottom: 3rem;
+    width: 100%;
+    background-color: rgba(88, 88, 88, 0.541);    
+    
+    display: none;
+
+    
+    .username{
+        @include flex(flex-start);
+        // border: 2px solid red;
+        // flex-grow: 1;
+        margin-top: 2px;
+
+        > div{
+            margin: 5px;
+        }
+        
+        
+       p{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: #fff;
+        margin-top: 3px;
+       }
+
+         img{
+            width: 30px;
+            height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    
+}
+.download {
+margin-right: 1rem;
+margin-top: 12px;
+
+button, a{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: $secondary !important;
+}
+}
+}

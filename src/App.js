@@ -1,9 +1,11 @@
 import './App.scss';
 import {Route, Routes, BrowserRouter as Router} from "react-router-dom"
 import Navbar from './component/Navbar';
-import Home from './component/Home';
-import Search from './component/Search';
+// import Search from './component/Search';
 import { NotFound } from './component/NotFound';
+import Home from './pages/Home';
+import Single from './pages/Single';
+import Tags from './pages/Tags';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
          <main>
          <Routes>
                 <Route path="/" element={<Home />}/>
-                <Route path="/search/:query" element={<Search />}/> 
+                <Route path="/:id" element={<Single />}/>
+                <Route path="/search/:tag" element={<Tags />}/> 
+                {/* <Route path="/search/:query" element={<Search />}/>  */}
                 <Route path="*" element={<NotFound/>}/>
                 
             </Routes>
