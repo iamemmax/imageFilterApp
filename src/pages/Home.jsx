@@ -126,14 +126,16 @@ const [fixedFilter, setfixedFilter] = useState(false);
     
 
     
-  };
-
-
+    };
+    
+    
     return (
+
         <div className='home-container'>
             
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
       
+            {loading && <Loading /> }
               
                 <InfiniteScroll
                 dataLength={images.length}
@@ -145,6 +147,7 @@ const [fixedFilter, setfixedFilter] = useState(false);
                 { images.length > 0  && 
                     <div className={fixedFilter ?"filter fixedFilter" : "filter"}>
                         <Slider {...settings_3}>
+
                     <button value="latest" onClick={handleSort} className=' active filterBtn'>latest</button>
                     <button value="popular" onClick={handleSort} className=' filterBtn'>popular</button>
                     <button value="oldest" onClick={handleSort} className='filterBtn'>oldest</button> 
@@ -157,12 +160,13 @@ const [fixedFilter, setfixedFilter] = useState(false);
                     
                      </div>
                 
-                }
+            }
         {/* </Slider> */}
 
             <div className="display-container">
+
                 <div className="display">
-                {images?.map((data, index) => <DisplayImage data={data} index={index}/>)}
+                { images?.map((data, index) => <DisplayImage data={data} index={index}/>)}
 
                 </div>
             </div>
@@ -170,6 +174,7 @@ const [fixedFilter, setfixedFilter] = useState(false);
 
 
         </div>
+       
     )
 }
 

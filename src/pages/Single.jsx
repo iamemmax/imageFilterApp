@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {getImages, getImagesById} from "../redux/Action/product/fetch"
 import moment from "moment"
 import Slider from "react-slick";
@@ -11,7 +10,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 import "../pages/scss/single.scss"
 import Search from '../component/Search';
-import { useState } from 'react';
 import Loading from '../component/Loading';
 
 const Single = () => {
@@ -44,7 +42,7 @@ const settings_3 = {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 6,
+            slidesToShow: 5,
             slidesToScroll: 1,
             infinite: false,
             dots: false
@@ -53,7 +51,7 @@ const settings_3 = {
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 1,
             initialSlide: 1
           }
@@ -61,7 +59,7 @@ const settings_3 = {
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 2,
             slidesToScroll: 1
           }
         }
@@ -73,6 +71,7 @@ const settings_3 = {
   };
   const [input, setInput] = useState("");
   const [query, setQuery] = useState("");
+  const [fixedTag, setFixedTag] = useState(false);
   const handleInput = (e)=>{
     setInput(e.target.value)
   }
@@ -84,6 +83,21 @@ const settings_3 = {
 
 
 }
+
+// fixed tags on scroll 
+const fixedTagsOnScroll = (e) =>{
+  if(window.pageYOffset > 300) {
+    setFixedTag(true)
+  }else{
+    setFixedTag(false)
+  }
+}
+window.addEventListener("scroll", fixedTagsOnScroll)
+
+
+
+
+
   return <div className='single__box'>
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
       
@@ -92,10 +106,11 @@ const settings_3 = {
      <>{single && 
       <div key={single.id}>
           {/* tags */}
-          <div className="tags">
+          <div className={fixedTag ? "tags fixedTagOnStroll": "tags"}>
               <Slider {...settings_3}> 
               {single.tags.map((data, index) => <Link to={`/search/${data.title}`}><li key={index}>{data.title}</li></Link>)}
               </Slider>
+
 
           </div>
 
@@ -116,7 +131,7 @@ const settings_3 = {
 
             <div className="color"><p>Color</p><span>{single.color}</span> </div>
 
-          {single.description &&  <div className="description"><p>description</p><span>{single.description}</span> </div>}
+          {/* {single.description &&  <div className="description"><p>description</p><span>{single.description}</span> </div>} */}
             <div className="like"><p>like</p><span>{single.likes}</span> </div>
             <div className="view"><p>views</p><span>{single.views}</span> </div>
             <div className="download"><p>downloads</p><span>{single.downloads}</span> </div>

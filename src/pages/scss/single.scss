@@ -23,7 +23,7 @@
 .slick-prev:before, .slick-next:before{
     position: absolute;
     right: 5px;
-    top: 5%;
+    top: .6rem !important;
     padding: 5px;
     transform: translateY(-50%);
 }
@@ -168,3 +168,24 @@
     }
 }
 
+
+.fixedTagOnStroll {
+    position: fixed;
+    left: 0;
+    z-index: 99;
+
+    @include breakpoints(mobile){
+    top: 6%;
+    width: 99%;
+
+    }
+    @include breakpoints(tablet){
+    top: 5%;
+    width: 100%;
+
+    }
+    @include breakpoints(laptop){
+        top: 7%;
+
+    }
+}

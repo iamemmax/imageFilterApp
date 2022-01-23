@@ -235,25 +235,25 @@
 }
 
 .filterBtn{
-    width: auto !important;
+    width: auto !important; 
+    // background-color: red !important;
 }
 
 .filter{
     padding: 5px;
-    @include flex;
     text-align: center;
-    width: 70%;
     box-shadow: 0px 1px 1px 0px (rgba(238, 238, 238, 0.733));
     z-index: 5;
     margin: 0px auto;
-    background-color: #fff !important;
-
-
+    background-color: #fff;
+    
+    
     @include breakpoints(mobile){
         width: 90% !important;
-
+        
     }
     @include breakpoints(laptop){
+        width: 80% !important;
         font-size: 16px !important;
         padding: 10px;
         
@@ -354,9 +354,31 @@
   
   .fixedFilter{
     position: fixed !important;
-    left: 0;
+    left: 5%;
     top: 3.5rem;
-    width:100% !important;
+    width:90% !important;
     transform: translateX(-50%, -50%);
+    // border: 2px solid red;
+    @include breakpoints(mobile){
+        width: 100% !important;
+        left: 0;
+    }
+    @include breakpoints(tablet){
+        width: 100%;
+    }
    
+    button{
+        margin: 0px !important;
+        display: flex !important;
+        
+    }
+    > *{
+        
+        @include breakpoints(mobile){
+            width: 92% !important;
+        }
+        @include breakpoints(laptop){
+            width: 60% !important;
+        }
+    }
   }

@@ -54,16 +54,23 @@
 
 
     .logo{
-      border: 5px solid $secondary;
+      border: 3px solid $secondary;
       border-bottom: none;
       padding: 5px;
         a{
             text-decoration: none;
-            font-size: 25px;
             // font-style: italic;
             font-family: 'Montserrat', sans-serif;
-            color: #eee
+            color: #eee;
+            
+            @include breakpoints(mobile){
+              font-size: 20px
+            }
+            @include breakpoints(tablet){
+              font-size: 25px;
+            }
 
+           
         }
     }
     ul{
