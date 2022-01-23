@@ -6,9 +6,9 @@ import "../pages/scss/home.scss"
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Search from '../component/Search';
 import Loading from '../component/Loading';
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css"; 
-// import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function Home() {
     // filter
@@ -77,7 +77,7 @@ const [fixedFilter, setfixedFilter] = useState(false);
 
   const handleHeader = () => {
   
-      if(window.pageYOffset >  100){
+      if(window.pageYOffset >  320){
           setfixedFilter(true)
           
       }else{
@@ -85,44 +85,52 @@ const [fixedFilter, setfixedFilter] = useState(false);
       }
   }
   window.addEventListener("scroll", handleHeader)
+  const settings_3 = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    arrow:true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: false,
+    // autoplaySpeed: 2000,
+    className:"filter",
 
-//   const settings_3 = {
-//     dots: false,
-//     infinite: false,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     initialSlide: 0,
-//     responsive: [
-//       {
-//         breakpoint: 1024,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//           infinite: true,
-//           dots: false
-//         }
-//       },
-//       {
-//         breakpoint: 600,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//           initialSlide: 2
-//         }
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           slidesToShow: 1,
-//           slidesToScroll: 1,
-//           arrow:true
-//         }
-//       }
-//     ]
-//   };
+    responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            initialSlide: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        }
+      ]
+
+    
+
+    
+  };
+
+
     return (
-        <div>
+        <div className='home-container'>
             
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
       
@@ -133,35 +141,30 @@ const [fixedFilter, setfixedFilter] = useState(false);
                 hasMore={true}
                 // scrollThreshold={0.5}
                 loader={loading && <Loading />}>
-    {/* <Slider {...settings_3}> */}
     
-                <div className={fixedFilter ?"filter fixedFilter" : "filter"}>
-                    <button value="popular" onClick={handleSort} className='active filterBtn'>popular</button>
-                    <button value="latest" onClick={handleSort} className='filterBtn'>latest</button>
+                { images.length > 0  && 
+                    <div className={fixedFilter ?"filter fixedFilter" : "filter"}>
+                        <Slider {...settings_3}>
+                    <button value="latest" onClick={handleSort} className=' active filterBtn'>latest</button>
+                    <button value="popular" onClick={handleSort} className=' filterBtn'>popular</button>
                     <button value="oldest" onClick={handleSort} className='filterBtn'>oldest</button> 
                     <button value="portrait" onClick={handleOrientation} className='filterBtn'>portrait</button>
                     <button value='landscape' onClick={handleOrientation} className='filterBtn'>landscape</button>
                     <button value='squarish'  onClick={handleOrientation} className='filterBtn'>squarish</button>
 
-                    {/* <select  className='filterBtn'  onChange={handleColor} id="">
-                        <option value="black">black</option>
-                        <option value="white">white</option>
-                        <option value="yellow">yellow</option>
-                        <option value="orange">orange</option>
-                        <option value="red">red</option>
-                        <option value="purple">purple</option>
-                        <option value="magenta">magenta</option>
-                        <option value="green">green</option>
-                        <option value="teal">teal</option>
-                        <option value="blue">blue</option>
-                        <option value="black_and_white">black_and_white</option>
-                        </select> */}
+
+                </Slider>
                     
-                </div>
+                     </div>
+                
+                }
         {/* </Slider> */}
 
-            <div className="display">
+            <div className="display-container">
+                <div className="display">
                 {images?.map((data, index) => <DisplayImage data={data} index={index}/>)}
+
+                </div>
             </div>
             </InfiniteScroll>
 

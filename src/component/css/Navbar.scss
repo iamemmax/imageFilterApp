@@ -37,14 +37,12 @@
 
 }
 .header{
-  // background-color: $primary_light;
   height: 60px;
   @include flex;
 
 
   width: 100%;
   max-width: 1000%;
-  // display: none;
   z-index: 999;
 
 
@@ -56,6 +54,9 @@
 
 
     .logo{
+      border: 5px solid $secondary;
+      border-bottom: none;
+      padding: 5px;
         a{
             text-decoration: none;
             font-size: 25px;

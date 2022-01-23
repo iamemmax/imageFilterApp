@@ -7,7 +7,7 @@ const Search = ({handleInput, handleSubmit, input}) => {
 
   const handleHeader = () => {
   
-      if(window.pageYOffset >  100){
+      if(window.pageYOffset >  200){
           setFixedHeader(true)
           
       }else{
@@ -19,7 +19,7 @@ const Search = ({handleInput, handleSubmit, input}) => {
   return <div className={fixedHeader ? 'form fixedSearch'  : 'form'}>
        <h2>Search from our Unlimited images Gallery </h2>
                 <form onSubmit={handleSubmit}>
-                    <input onChange={handleInput} type="text" value={input} placeholder='search' />
+                    <input onChange={handleInput} type="text" value={input} placeholder='Search   images' />
                     <button type="submit"><aiIcons.AiOutlineSearch/></button>
 
                 </form>

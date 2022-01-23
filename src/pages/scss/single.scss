@@ -5,7 +5,15 @@
 
 
 
+.single__box{
+    background-color: #fff;
+    width: 90%;
+    margin: 0px auto;
 
+    @include breakpoints(mobile){
+        width: 100%;
+    }
+}
 .slick-next:before, .slick-prev:before{
     position: relative;
     z-index: 99 !important;
@@ -15,7 +23,7 @@
 .slick-prev:before, .slick-next:before{
     position: absolute;
     right: 5px;
-    top: 50%;
+    top: 5%;
     padding: 5px;
     transform: translateY(-50%);
 }
@@ -28,7 +36,7 @@
     padding: 5px;
     width: 99% !important;
     margin: 0px auto;
-    background-color: #c5c5c5de;
+    // background-color: #c5c5c5de;
     text-align: center;
     
 
@@ -148,6 +156,7 @@
         color: #fff;
         text-transform: uppercase;
         // border-radius: 20px;
+        cursor: pointer;
 
     }
     a{

@@ -34,7 +34,7 @@ const settings_3 = {
     infinite: false,
     speed: 500,
     arrow:true,
-    slidesToShow: 10,
+    slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: false,
     // autoplaySpeed: 2000,
@@ -44,7 +44,7 @@ const settings_3 = {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 10,
+            slidesToShow: 6,
             slidesToScroll: 1,
             infinite: false,
             dots: false
@@ -61,7 +61,7 @@ const settings_3 = {
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 1
           }
         }
@@ -84,7 +84,7 @@ const settings_3 = {
 
 
 }
-  return <div>
+  return <div className='single__box'>
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
       
        {loading ? <p><Loading /></p> :
@@ -102,7 +102,7 @@ const settings_3 = {
 {/* img */}
             <div className="single__img" >
             <img src={single.urls.regular} alt={single.alt_description} />
-            <button><a href={`${single.links.download}/&force=true`}>click to download</a> </button>
+           <a href={`${single.links.download}/&force=true`}> <button>click to download</button></a> 
             </div>
           <div className="more-info">
              
