@@ -16,14 +16,17 @@ const Search = ({handleInput, handleSubmit, input}) => {
   }
   window.addEventListener("scroll", handleHeader)
 
-  return <div className={fixedHeader ? 'form fixedSearch'  : 'form'}>
-       <h2>Search from our Unlimited images Gallery </h2>
-                <form onSubmit={handleSubmit}>
-                    <input onChange={handleInput} type="text" value={input} placeholder='Search   images' />
-                    <button type="submit"><aiIcons.AiOutlineSearch/></button>
+  return(
+    <div className={fixedHeader ? 'form fixedSearch'  : 'form'}>
+    <h2>Search from our Unlimited images Gallery </h2>
+             <form onSubmit={handleSubmit}>
+                 <input onChange={handleInput} type="text" value={input} placeholder='Search   images' />
+                 <button type="submit"><aiIcons.AiOutlineSearch/></button>
 
-                </form>
-  </div>;
+             </form>
+</div>
+  )
+   
 };
 
 export default Search;

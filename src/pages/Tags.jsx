@@ -62,7 +62,8 @@ function Tags() {
   
   
   
-  return <div>
+  return (
+    <div>
      <Helmet>
                 <meta charSet="utf-8" />
                 <title>Search image</title>
@@ -84,14 +85,16 @@ function Tags() {
           <div className="tag__container">
             <div className="arrange__tag">
 
-          {imgTags && imgTags.map((data, index) =><ShowTags  data={data} index={index}/>)}
+          {imgTags && imgTags.map((data, index) =><ShowTags  data={data} key={index}/>)}
       </div>
 
     </div>
     </InfiniteScroll>
                 </>
 {/* } */}
-  </div>;
+  </div>
+  )
+  
 }
 
 export default Tags;

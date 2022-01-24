@@ -101,8 +101,9 @@ window.addEventListener("scroll", fixedTagsOnScroll)
 
 
 
-  return <div className='single__box'>
-     <Helmet>
+  return (
+    <div className='single__box'>
+          <Helmet>
                 <meta charSet="utf-8" />
                 <title>image details</title>
                 <meta name="description" content="search by iamge name "/>
@@ -110,10 +111,10 @@ window.addEventListener("scroll", fixedTagsOnScroll)
             </Helmet>
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
       
-       {loading ? <p><Loading /></p> :
+       {loading ? <><Loading /></>:
       
      <>{single && 
-      <div key={single.id}>
+      <div>
           {/* tags */}
           <div className={fixedTag ? "tags fixedTagOnStroll": "tags"}>
               <Slider {...settings_3}> 
@@ -151,7 +152,9 @@ window.addEventListener("scroll", fixedTagsOnScroll)
       </div>
       }</> 
       }
-  </div>;
+  </div>
+  )
+   
 };
 
 export default Single;

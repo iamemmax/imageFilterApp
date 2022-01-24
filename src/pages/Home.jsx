@@ -72,7 +72,6 @@ const fetchMore =() =>{
 
 
 const [fixedFilter, setfixedFilter] = useState(false);
-  console.log(query);
 
 
   const handleHeader = () => {
@@ -172,7 +171,7 @@ const [fixedFilter, setfixedFilter] = useState(false);
 
                     {/* {loading && <Loading /> } */}
                 <div className="display">
-                { images?.map((data, index) => <DisplayImage data={data} index={index}/>)}
+                { images?.map((data, index) => <DisplayImage data={data}  key={index}/>)}
 
                 </div>
             </div>

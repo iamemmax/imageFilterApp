@@ -6,10 +6,11 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { Link } from 'react-router-dom';
 
 
-function DisplayImage({data, index}) {
+function DisplayImage({data}) {
 
     const [toggleDownloadInfo, setToggleDownloadInfo] = useState(null);
-  return <div  className='img-container' key={index}>
+  return (
+    <div  className='img-container'>
       
            <Link to={`/${data.id}`}>
         <div className="img">
@@ -40,7 +41,9 @@ function DisplayImage({data, index}) {
       
     </OutsideClickHandler>
     
-  </div>;
+  </div>
+  )
+  
 }
 
 export default DisplayImage;
