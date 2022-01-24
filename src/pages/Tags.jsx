@@ -44,6 +44,7 @@ function Tags() {
       
       
     }
+    console.log(fixedTag);
     useEffect(() => {
       query && navigate(`/search/${query}`)
      
