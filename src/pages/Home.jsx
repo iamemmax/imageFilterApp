@@ -145,7 +145,7 @@ const [fixedFilter, setfixedFilter] = useState(false);
                 dataLength={images.length}
                 next={fetchMore}
                 hasMore={true}
-                // scrollThreshold={0.5}
+                scrollThreshold={0.7}
                 loader={loading && <Loading />}>
     
                 { images.length > 0  && 

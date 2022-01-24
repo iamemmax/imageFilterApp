@@ -78,7 +78,7 @@ function Tags() {
                 dataLength={imgTags.length}
                 next={fetchMore}
                 hasMore={true}
-                // scrollThreshold={0.5}
+                scrollThreshold={0.7}
                 // loader={loading && <Loading />}
                 >
     
