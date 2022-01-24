@@ -1,0 +1,25 @@
+@import "../saas.config/color.scss";
+@import "../saas.config/color.scss";
+@import "../saas.config/color.scss";
+
+
+html, body{
+    margin-bottom: 2rem;
+    height: 100%;
+}
+
+.footer{
+    padding: 10px;
+    text-align: center;
+    background-color: $primary_light;
+    width: 100%;
+    max-width: 100%;
+    
+
+    p{
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        color: $primary;
+        color: #fff;
+    }
+}

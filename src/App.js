@@ -6,6 +6,7 @@ import { NotFound } from './component/NotFound';
 import Home from './pages/Home';
 import Single from './pages/Single';
 import Tags from './pages/Tags';
+import Footer from './component/Footer';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
                 
             </Routes>
          </main>
+
+         <footer>
+           <Footer />
+         </footer>
         </Router>
     </div>
   );

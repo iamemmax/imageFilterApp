@@ -359,6 +359,7 @@
     width:90% !important;
     transform: translateX(-50%, -50%);
     // border: 2px solid red;
+    text-align: center;
     @include breakpoints(mobile){
         width: 100% !important;
         left: 0;
@@ -375,7 +376,19 @@
     > *{
         
         @include breakpoints(mobile){
-            width: 92% !important;
+            width: 80% !important;
+            text-align: center !important;
+
+            .slick-next:before, .slick-prev:before{
+                top: 35% !important;
+            }
+            .slick-next:before{
+                left: -10px;
+            }
+            .slick-prev:before{
+                left: -12px !important;
+            }
+            
         }
         @include breakpoints(laptop){
             width: 60% !important;

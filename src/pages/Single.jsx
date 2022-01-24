@@ -1,16 +1,15 @@
 import React, { useEffect, useState  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import {getImages, getImagesById} from "../redux/Action/product/fetch"
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import {getImagesById} from "../redux/Action/product/fetch"
 import moment from "moment"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
-
 import "../pages/scss/single.scss"
 import Search from '../component/Search';
 import Loading from '../component/Loading';
+
 
 const Single = () => {
 const {id} = useParams()
@@ -75,14 +74,17 @@ const settings_3 = {
   const handleInput = (e)=>{
     setInput(e.target.value)
   }
+  const navigate = useNavigate()
   const handleSubmit = (e) =>{
     e.preventDefault()
     setQuery(input)
     setInput("")
-    dispatch(getImages( query))
-
-
-}
+    // dispatch(getImageByTag(query))
+    
+    
+    
+  }
+  query && navigate(`/search/${query}`)
 
 // fixed tags on scroll 
 const fixedTagsOnScroll = (e) =>{
