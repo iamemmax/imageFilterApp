@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../pages/scss/single.scss"
 import Search from '../component/Search';
 import Loading from '../component/Loading';
+import { Helmet } from 'react-helmet';
 
 
 const Single = () => {
@@ -101,6 +102,12 @@ window.addEventListener("scroll", fixedTagsOnScroll)
 
 
   return <div className='single__box'>
+     <Helmet>
+                <meta charSet="utf-8" />
+                <title>image details</title>
+                <meta name="description" content="search by iamge name "/>
+                <meta name="keyword" content="iamge, search latest popular landscape portriate" />
+            </Helmet>
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
       
        {loading ? <p><Loading /></p> :

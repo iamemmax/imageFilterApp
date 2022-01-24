@@ -8,6 +8,7 @@ import Loading from "../component/Loading"
 import InfiniteScroll from 'react-infinite-scroll-component';
 import "./scss/tags.scss"
 import Search from '../component/Search';
+import { Helmet } from 'react-helmet';
 
 function Tags() {
     const {tag} = useParams()
@@ -46,7 +47,7 @@ function Tags() {
     useEffect(() => {
       query && navigate(`/search/${query}`)
      
-    }, [query]);
+    }, [query, navigate]);
   
   // fixed tags on scroll 
   const fixedTagsOnScroll = (e) =>{
@@ -61,6 +62,12 @@ function Tags() {
   
   
   return <div>
+     <Helmet>
+                <meta charSet="utf-8" />
+                <title>Search image</title>
+                <meta name="description" content="Image gallery application" />
+                <meta name="keyword" content="iamge, search latest popular landscape portriate" />
+            </Helmet>
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
 
     {loading &&  <Loading /> }

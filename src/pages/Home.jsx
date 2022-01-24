@@ -9,7 +9,7 @@ import Loading from '../component/Loading';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
+import {Helmet} from "react-helmet";
 function Home() {
     // filter
 
@@ -132,6 +132,12 @@ const [fixedFilter, setfixedFilter] = useState(false);
     return (
 
         <div className='home-container'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Homepage</title>
+                <meta name="description" content="Image gallery application" />
+                <meta name="keyword" content="iamge, search latest popular landscape portriate" />
+            </Helmet>
             
             <Search handleInput={handleInput} input={input} handleSubmit={handleSubmit} />
       
